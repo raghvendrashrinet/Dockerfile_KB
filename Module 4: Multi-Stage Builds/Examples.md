@@ -87,3 +87,10 @@ CMD ["python", "app.py"]
 ```
 
 **Nuance**: Wheels (pre‑built packages) are cached in builder stage → runtime installs them quickly without compiling heavy libraries (like NumPy, Pandas).
+
+| Language/App | Builder Stage | Runtime Stage | Benefit |
+| --- | --- | --- | --- |
+| **Go** | Compile binary | Tiny Alpine | Ultra‑small image |
+| **Java** | Maven build | JRE only | Removes build tools |
+| **React** | Node build | Nginx serve | Static assets only |
+| **Python** | Build wheels | Slim runtime | Faster installs, smaller image |
